@@ -1,0 +1,24 @@
+{
+  "name": "food-delivery-microservices",
+  "version": "2.0.0",
+  "description": "Food Delivery System with Microservices Architecture and SQLite Database",
+  "scripts": {
+    "start:gateway": "node api-gateway/server.js",
+    "start:user": "node user-service/server.js",
+    "start:order": "node order-service/server.js",
+    "start:all": "concurrently \"npm run start:user\" \"npm run start:order\" \"npm run start:gateway\"",
+    "dev": "concurrently \"nodemon user-service/server.js\" \"nodemon order-service/server.js\" \"nodemon api-gateway/server.js\""
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.7",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.1"
+  }
+}
